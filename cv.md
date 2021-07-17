@@ -4,7 +4,7 @@
 4. **My skills:** I'm just learning now but I already know the basics of HTML, CSS, GIT and JS;
 5. **Example code:**
     - **HTML:**
-```
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -25,9 +25,9 @@
     </div>
 </body>
 </html>
-```  
-  * **CSS:**
 ```
+   - **CSS:**
+```css
 body{
     background: url(img.png);
 }
