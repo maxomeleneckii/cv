@@ -3,8 +3,8 @@
 3. **About me:** Now I work as an engineer in an electrical company. Before I didn't work in IT, but Now I am learning programming on YouTube and doing a course at RS school. **_I am a fast learner and will definitely achieve my goal._** I want to change my profession and work as IT;
 4. **My skills:** I'm just learning now but I already know the basics of HTML, CSS, GIT and JS;
 5. **Example code:**
-  **HTML:**
- ```
+    - **HTML:**
+```
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -25,8 +25,8 @@
     </div>
 </body>
 </html>
-```
-**CSS:**
+```  
+  * **CSS:**
 ```
 body{
     background: url(img.png);
