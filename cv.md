@@ -35,14 +35,14 @@
     - **CSS:**
         ```css
         body{
-            background: url(img.png);
+            background-image: url(img.png);
         }
         div {
             border: 5px solid rgb(148, 50, 104);
             margin: 0px auto;
             max-width: 500px;
             text-align: center;
-            background: red;
+            background-color: red;
         }
         h1,
         p {
