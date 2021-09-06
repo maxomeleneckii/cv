@@ -54,9 +54,10 @@ button {
 a,
 a:visited {
   text-decoration: none;
+  color: #fff;
 }
 a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 ul li {
   list-style: none;
@@ -77,8 +78,7 @@ h6 {
 
 body {
   font-family: "Lato", "Times New Roman", sans-serif;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(206, 206, 206, 1) 91%) 0 0/1px 3000px;
+  background: linear-gradient(to bottom, rgb(219, 214, 214) 0%, rgb(218, 213, 213) 91%) 0 0/1px 3000px;
 }
 /* -------------------------------------------Workspace------------------------------------------- */
 .wrapper {
@@ -181,8 +181,8 @@ body {
 .content__rght {
   flex: 1 1 auto;
   overflow: hidden;
-  border-left: 8px solid rgb(223, 222, 222);
-  background-color: white;
+  border-left: 3px solid rgb(201, 201, 201);
+  background-color: rgb(240, 240, 240);
   color: black;
 }
 .content__rght__row {
@@ -203,23 +203,24 @@ body {
   text-align: left;
   font-weight: 900;
   line-height: 40px;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .content__rght__tittle-name__prof {
-  font-size: 20px;
-  position: relative;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  /* position: relative; */
 }
-.content__rght__tittle-name__prof h2::before {
+/* .content__rght__tittle-name__prof h2::before {
   content: "";
   position: absolute;
   width: 280px;
   height: 3px;
   margin: -6px 0 0 -30px;
   padding: 0;
-
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(204, 204, 204, 1) 100%);
-}
+} */
 /* -------------------------------------------About me, Education, Experience------------------------------------------- */
 .heading {
   padding: 10px 0 10px 30px;
@@ -227,7 +228,7 @@ body {
   background-color: transparent;
   font-weight: 900;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(204, 204, 204, 1) 100%);
+  background: linear-gradient(to bottom, rgb(231, 231, 231) 0%, rgb(221, 221, 221) 100%);
 }
 .body-type {
   padding: 25px;
@@ -258,31 +259,33 @@ body {
   width: 330px;
   height: 6px;
   margin: 0 0 5px 0;
-  background-color: rgb(224, 222, 218);
+  background-color: rgb(190, 189, 187);
   color: transparent;
+  border-radius: 10px;
 }
 .how {
   height: 100%;
   background-color: rgb(110, 110, 110);
   color: transparent;
+  border-radius: 10px;
 }
 .content__rght__list__html__level__how {
-  width: 50%;
+  width: 60%;
 }
 .content__rght__list__css__level__how {
-  width: 40%;
+  width: 60%;
 }
 .content__rght__list__js__level {
   margin: 0;
 }
 .content__rght__list__js__level__how {
-  width: 10%;
+  width: 15%;
 }
 /* -------------------------------------------Footer------------------------------------------- */
 .footer {
   height: 60px;
   position: relative;
-  border-top: 3px solid rgb(223, 222, 222);
+  border-top: 3px solid rgb(201, 201, 201);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(204, 204, 204, 1) 100%);
 }
