@@ -3,6 +3,12 @@
 3. **About me:** Now I work as an engineer in an electrical company. Before I didn't work in IT, but Now I am learning programming on YouTube and doing a course at RS school. **_I am a fast learner and will definitely achieve my goal._** I want to change my profession and work as IT;
 4. **My skills:** I'm just learning now but I already know the basics of HTML, CSS, GIT and JS;
 5. **Example code:**
+    - **Task codewars:**
+        ```js
+        function multiply(a, b){
+          return a * b
+        }
+        ```
     - **HTML:**
         ```html
         <!DOCTYPE html>
@@ -50,6 +56,6 @@
             font-style: italic;
         }
         ```
-6. **Work experience:** absent in the IT profession;
+6. **Work experience:** I have no experience in IT, but I have already passed stage0 and I am still studying at rsschool;
 7. **Education:** higher technical, but not in the IT profession. I am learning programming on YouTube and doing a course at RS school;
-8. **English level:** A2 (I am teaching at the moment).
+8. **English level:** A2 (I study English with my tutor every week).
