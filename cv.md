@@ -42,7 +42,7 @@
             margin: 0px auto;
             max-width: 500px;
             text-align: center;
-            background-color: red;
+            background: red;
         }
         h1,
         p {
