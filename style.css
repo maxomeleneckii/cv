@@ -123,6 +123,8 @@ body {
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
   line-height: 20px;
   width: 100%;
 }
@@ -131,6 +133,9 @@ body {
   color: #000;
   font-weight: 700;
   font-size: 16px;
+}
+.navigation-item:hover {
+  transform: scale(1.1);
 }
 .navigation-item:not(:last-child) {
   padding-right: 15px;
@@ -151,7 +156,7 @@ body {
 }
 /* -------------------------------------------Left side content------------------------------------------- */
 .content__left {
-  flex: 1 1 auto;
+  flex: 0 0 250px;
   overflow: hidden;
   background: linear-gradient(to bottom, rgba(125, 126, 125, 1) 17%, rgba(40, 40, 40, 1) 100%);
 }
@@ -271,7 +276,23 @@ body {
   line-height: 20px;
   text-align: justify;
 }
-.body-type a::after {
+.body-type .example-cod {
+  color: #000; 
+  text-decoration: underline;
+}
+.body-project__item {
+  max-width: 140px;
+  height: 90px;
+  transition: .5s;
+}
+.body-project__item:hover {
+  transform: scale(1.2);
+}
+.body-project__item .completed-project {
+  color: #000; 
+  text-align: center;
+}
+.example-cod::after {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -279,16 +300,37 @@ body {
   height: 17px;
   background: url(Images/free-icon-unlink-149919.svg) center/ 11px no-repeat;
 }
+.content__rght__exp__body-project {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 5px;
+  padding-top: 15px;
+}
+.content__rght__exp__body-project img {
+  width: 100%;
+  display: block;
+}
+
 /* -------------------------------------------Skills------------------------------------------- */
+.content__rght__skills-container {
+  display: flex;
+}
+.content__rght__list ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1px;
+}
 .content__rght__list {
   padding: 25px;
   position: relative;
-  max-width: 100%;
+  min-width: 50%;
   min-height: 100%;
 
 }
 .tittle img {
-  width: 5%;
+  width: 10%;
 }
 .head {
   position: absolute;
@@ -328,6 +370,31 @@ body {
 }
 .content__rght__list__js__level__how {
   width: 15%;
+}
+
+
+.content__lft__list {
+  padding: 25px;
+  position: relative;
+  min-width: 50%;
+  min-height: 100%;
+}
+.content__lft__list ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+.content__lft__list__git__level__how {
+  width: 40%;
+}
+.content__lft__list__blender__level__how {
+  width: 50%;
+}
+.content__lft__list__unity__level {
+  margin: 0;
+}
+.content__lft__list__unity__level__how {
+  width: 20%;
 }
 /* -------------------------------------------Footer------------------------------------------- */
 .footer {
