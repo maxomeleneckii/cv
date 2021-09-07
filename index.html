@@ -15,13 +15,27 @@
 <body>
   <div class="wrapper">
     <div class="container">
+      <header class="header">
+        <h1 class="main-heading">cv</h1>
+        <nav class="navigation">
+          <ul class="navigation-list">
+            <li class="navigation-item"><a href="#contacts">Contacts</a></li>
+            <li class="navigation-item"><a href="#follow me">Follow me</a></li>
+            <li class="navigation-item"><a href="#languages">Languages</a></li>
+            <li class="navigation-item"><a href="#about me">About me</a></li>
+            <li class="navigation-item"><a href="#education">Education</a></li>
+            <li class="navigation-item"><a href="#experience">Experience</a></li>
+            <li class="navigation-item"><a href="#skills">Skills</a></li>
+          </ul>
+        </nav>
+      </header>
       <main class="content">
         <section class="content__rght">
           <div class="container__rght">
             <div class="content__rght__row">
               <div class="content__rght__tittle-name">
                 <div class="content__rght__tittle-name__name">
-                  <h1>Max Omeleneckii</h1>
+                  <h2>Max Omeleneckii</h2>
                 </div>
                 <div class="content__rght__tittle-name__prof">
                   <h2>Web developer</h2>
@@ -29,7 +43,7 @@
               </div>
               <article class="content__rght__about">
                 <div class="content__rght__about__tittle heading">
-                  <h2>About me:</h2>
+                  <h3 id="about me">About me:</h3>
                 </div>
                 <div class="content__rght__about__body body-type">
                   <p>Now I work as an engineer in an electrical company. Before I didn’t work in IT,
@@ -39,7 +53,7 @@
               </article>
               <article class="content__rght__education">
                 <div class="content__rght__education__tittle heading">
-                  <h2>Education:</h2>
+                  <h3 id="education">Education:</h3>
                 </div>
                 <div class="content__rght__education__body body-type">
                   <p>Higher technical, but not in the IT profession. I am learning programming on
@@ -49,7 +63,7 @@
               </article>
               <article class="content__rght__exp">
                 <div class="content__rght__exp__tittle heading">
-                  <h2>Experience:</h2>
+                  <h3 id="experience">Experience:</h3>
                 </div>
                 <div class="content__rght__exp__body body-type">
                   <p>I have no experience in IT, but I have already passed stage(0) and I am still studying at rsschool.</p>
@@ -59,15 +73,16 @@
               </article>
               <article class="content__rght__skills">
                 <div class="content__rght__skills__tittle heading">
-                  <h2>Skills:</h2>
+                  <h2 id="skills">Skills:</h2>
                 </div>
                 <div class="content__rght__list">
                   <ul>
                     <li>
-                      <div class="content__rght__list__html">
+                      <div class="content__rght__list__html conteiner-lvl">
                         <div class="content__rght__list__html__tittle tittle">
-                          <img src="Images/html-5.svg" alt="logo-html">HTML5
-                          <span>60%</span>
+                          <img src="Images/html-5.svg" alt="logo-html">
+                          <span class="head">HTML5</span>
+                          <span class="lvl">60%</span>
                         </div>
                         <div class="content__rght__list__html__level level">
                           <div class="content__rght__list__html__level__how how">
@@ -76,10 +91,11 @@
                       </div>
                     </li>
                     <li>
-                      <div class="content__rght__list__css">
+                      <div class="content__rght__list__css conteiner-lvl">
                         <div class="content__rght__list__css__tittle tittle">
-                          <img src="Images/css-3.svg" alt="logo-css">CSS
-                          <span>60%</span>
+                          <img src="Images/css-3.svg" alt="logo-css">
+                          <span class="head">CSS</span>
+                          <span class="lvl">60%</span>
                         </div>
                         <div class="content__rght__list__css__level level">
                           <div class="content__rght__list__css__level__how how">
@@ -88,10 +104,11 @@
                       </div>
                     </li>
                     <li>
-                      <div class="content__rght__list__js">
+                      <div class="content__rght__list__js conteiner-lvl">
                         <div class="content__rght__list__js__tittle tittle">
-                          <img src="Images/java-script.svg" alt="logo-js">JS
-                          <span>15%</span>
+                          <img src="Images/java-script.svg" alt="logo-js">
+                          <span class="head">JS</span>
+                          <span class="lvl">15%</span>
                         </div>
                         <div class="content__rght__list__js__level level">
                           <div class="content__rght__list__js__level__how how"></div>
@@ -110,7 +127,7 @@
               <figure class="content__left__avatar">
                 <img src="Images/Avatar.png" alt="avatar">
               </figure>
-              <h2 class="content__left__tittle">Contacts:</h2>
+              <h2 class="content__left__tittle" id="contacts">Contacts:</h2>
               <aside class="content__left__contacts">
                 <ul class="content__left__contacts__list list">
                   <li>Brest, Belarus</li>
@@ -120,7 +137,7 @@
               </aside>
               <aside class="content__left__follow">
                 <div class="content__left__tittle">
-                  <h2>Follow me:</h2>
+                  <h2 id="follow me">Follow me:</h2>
                 </div>
                 <ul class="content__left__follow__list list">
                   <li><a target="_blank" href="https://www.instagram.com/">maks_omeleneckii</a></li>
@@ -131,7 +148,7 @@
               </aside>
               <aside class="content__left__lang">
                 <div class="content__left__tittle">
-                  <h2>Languages:</h2>
+                  <h2 id="languages">Languages:</h2>
                 </div>
                 <div class="content__left__lang__list list">
                   <ul>
@@ -143,7 +160,6 @@
             </div>
           </div>
         </section>
-
       </main>
       <footer class="footer">
         <div class="footer__link">
