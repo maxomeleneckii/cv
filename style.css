@@ -29,6 +29,9 @@ body {
   font-size: 100%;
   line-height: 1;
 }
+body.block {
+  overflow: hidden;
+}
 input,
 button,
 textarea {
@@ -86,6 +89,8 @@ body {
   max-width: 768px;
   box-shadow: 0px 9px 10px #000;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 /* -------------------------------------------Header------------------------------------------- */
 .header {
@@ -104,6 +109,8 @@ body {
   border: 3px solid #000;
   border-radius: 50%;
   padding: 7px;
+  z-index: 1;
+
 }
 .header-navigation {
   display: flex;
@@ -120,7 +127,7 @@ body {
   line-height: 20px;
   width: 100%;
 }
-.navigation-item>a {
+.navigation-item a {
   font-family: "Lato", "Times New Roman", sans-serif;
   color: #000;
   font-weight: 700;
@@ -132,12 +139,26 @@ body {
 .navigation-item:not(:last-child) {
   padding-right: 15px;
 }
-.burger-menu{
+.burger-menu {
   width: 35px;
   padding: 10px 0;
-  position:absolute;
-  top: 35%;
+  position:fixed;
+  top: 25px;
   right: 15px;
+  display: none;
+  z-index: 1;
+  background: initial;
+}
+.burger-menu.active span {
+  background: none;
+}
+.burger-menu.active span::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0px, -50%);
+}
+.burger-menu.active span::after {
+  bottom: 40%;
+  transform: rotate(45deg) translate(0px, 50%);
 }
 .burger-menu__item {
   display: block;
@@ -153,6 +174,7 @@ body {
   background: rgb(100, 98, 98);
   position: absolute;
   left: 0;
+  transition: all .3s ease 0s;
 }
 .burger-menu__item::before {
   top: 1px;
@@ -423,7 +445,7 @@ iframe {
 .content__left__contacts__list li:nth-child(3) {
   background: url(Images/free-icon-envelope-rectangular-outline-variant-29998.svg) left/ 15px no-repeat;
 }
-/* -------------------------------------------Fallow me------------------------------------------- */
+/* -----------------------------------Fallow me----------------------------------- */
 .content__left__follow__list li:nth-child(1) {
   background: url(Images/free-icon-instagram-2111463.svg) left/ 20px no-repeat;
 }
@@ -452,7 +474,7 @@ iframe {
   padding: 0 0 20px 20px;
 }
 
-/* -------------------------------------------Footer------------------------------------------- */
+/* ----------------------Footer--------------------------- */
 .footer {
   height: 60px;
   position: relative;
@@ -468,12 +490,50 @@ iframe {
 .footer__link__rss img {
   width: 10%;
 }
+/* ----------------------Burger nav--------------------------- */
+.burger-nav {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  right: -100%;
+  background: rgba(238, 238, 238, 0.97);
+  display: none;
+  transition: .5s;
+  overflow: auto;
+}
+.burger-nav::before{
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgb(211, 211, 211) 0%, rgb(226, 226, 226) 100%);
+}
+.burger-nav__list {
+  line-height: 45px;
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 75px;
+}
 
-/* -------------------------------------------Media query------------------------------------------- */
+/* ----------------------------------------Media query-------------------------------------- */
 /* ------------------------------736px---------------------------- */
 @media (max-width:736px) {
-  .navigation-item a {
+  .burger-menu {
+    display: block;
+  }
+  .burger-nav {
+    display: block;
+  }
+  .burger-nav.active {
+   right: 0;
+  }
+  .header-navigation {
     display: none;
+  }
+  .navigation-item:hover {
+    transform: scale(1);
   }
   .content__rght__tittle{
     padding: 10px;
@@ -506,7 +566,7 @@ iframe {
     width: 20%;
   }
   .navigation-item a {
-    font-size: 12px;
+    font-size: 20px;
   }
   .content__rght__tittle-name {
     font-size: 20px;
@@ -548,7 +608,7 @@ iframe {
     justify-content: start;
   }
   .navigation-item a{
-    font-size: 12px;
+    font-size: 20px;
   }
   .link-resume a{
     font-size: 10px;
@@ -581,7 +641,7 @@ iframe {
     text-align: start;
   }
   .navigation-item a{
-    font-size: 12px;
+    font-size: 20px;
   }
   .content__left__picture{
     display: none;
@@ -640,6 +700,5 @@ iframe {
   .project__item:hover {
     box-shadow: none;
     transform: scale(1);
-
   }
 }
