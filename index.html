@@ -27,6 +27,9 @@
             <li class="navigation-item"><a href="#skills">Skills</a></li>
           </ul>
         </nav>
+        <button class="burger-menu">
+          <span class="burger-menu__item"></span>
+        </button>
       </header>
       <main class="content">
         <section class="content__rght">
@@ -44,8 +47,12 @@
                 <h3 id="about-me">About me:</h3>
               </div>
               <div class="body-type">
-                <p>Hey, there. My name is Max. I'm 26. I live and work in the city of Brest in Belarus. I work as an engineer in an electrical company. Before I didn’t work in IT, but now I'm learning programming on YouTube and doing a course at RS school. I'm a fast learner and will definitely achieve my goal. I want to change my profession and work as IT. In my free time, I like to play computer games and watch TV series. But now I spend almost all my free time on learning.</p>
-                <span class="link-resume"><b>Link to my own video resume:</b><a target="_blank" class="video" href="https://youtu.be/TWA8wSQV8Zg">https://youtu.be/TWA8wSQV8Zg</a></span>
+                <p>Hey, there. My name is Max. I'm 26. I live and work in the city of Brest in Belarus. I work as an engineer in an electrical company. Before I didn’t work in IT, but now I'm learning programming on YouTube and doing a course at RS school. I'm a fast learner and will definitely achieve my goal. I want to change my profession and work as IT. In my free time, I like to play computer games and watch TV series. But now I spend almost all my free time on learning.</p> <br>
+                <div class="video-fixed"><span class="link-resume"><b>My own video resume:</b><a target="_blank" class="video" href="https://youtu.be/TWA8wSQV8Zg">https://youtu.be/TWA8wSQV8Zg</a></span>
+                  <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TWA8wSQV8Zg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
               </div>
             </article>
             <article class="content__rght__education">
@@ -61,26 +68,41 @@
                 <h3 id="experience">Experience:</h3>
               </div>
               <div class="body-type">
-                <p>I have no experience in IT, but I have already passed stage 0 from rsschool and continue to study there. Below you can see an example of my code and completed projects in my repository.</p>
+                <p>I have no experience in IT, but I have already passed "stage 0" from rsschool and continue to study there. Below you can see an example of my code and completed projects in my repository.</p>
                 <p><a class="example-cod" target="_blank" href="https://maxomeleneckii.github.io/rsschool-cv/cv">Sample code</a></p><br>
                 <p>Completed work on the links:</p>
                 <div class="content__rght__exp-project">
-                  <div class="project__item">
-                    <a target="_blank" class="project__item-completed"  href="https://rolling-scopes-school.github.io/maxomeleneckii-JSFEPRESCHOOL/museum">
-                      <img src="Images/muzey-luvr.jpg" alt="museum">
-                      <h4>Museum</h4>
+                  <div class="project">
+                    <a class="project__item" target="_blank" href="https://rolling-scopes-school.github.io/maxomeleneckii-JSFEPRESCHOOL/museum">
+                      <div class="project__item-completed">
+                        <img src="Images/muzey-luvr.jpg" alt="museum">
+                        <h4>Museum</h4>
+                      </div>
+                      <div class="project__item-description">
+                        <p>This is the Louvre Museum project, which I still add adaptability and functionality. There are implemented links with a smooth transition, a burger menu, the ability to buy tickets, and more.</p>
+                      </div>
                     </a>
                   </div>
-                  <div class="project__item">
-                    <a target="_blank" class="project__item-completed" href="https://rolling-scopes-school.github.io/maxomeleneckii-JSFEPRESCHOOL/custom-video-player">
-                      <img src="Images/pleer.JPG" alt="player">
-                      <h4>Custom-video-player</h4>
+                  <div class="project">
+                    <a target="_blank" class="project__item" href="https://rolling-scopes-school.github.io/maxomeleneckii-JSFEPRESCHOOL/custom-video-player">
+                      <div class="project__item-completed">
+                        <img src="Images/pleer.JPG" alt="player">
+                        <h4>Custom-video-player</h4>
+                      </div>
+                      <div class="project__item-description">
+                        <p>This is a custom video player project. Work on completion of the project is underway. There is an endless video slider, the ability to view videos, hotkeys to control the player, and more.</p>
+                      </div>
                     </a>
                   </div>
-                  <div class="project__item">
-                    <a target="_blank" class="project__item-completed" href="https://rolling-scopes-school.github.io/maxomeleneckii-JSFEPRESCHOOL/vertical-slider">
-                      <img class="slider" src="Images/ps5.jpg" alt="slider">
-                      <h4>Vertical-slider</h4>
+                  <div class="project">
+                    <a target="_blank" class="project__item" href="https://rolling-scopes-school.github.io/maxomeleneckii-JSFEPRESCHOOL/vertical-slider">
+                      <div class="project__item-completed">
+                        <img class="slider" src="Images/ps5.jpg" alt="slider">
+                        <h4>Vertical-slider</h4>
+                      </div>
+                      <div class="project__item-description">
+                        <p>This is a vertical slider project. The project has been completed. There is an endless slider of pictures, the ability to scroll through pictures with a swipe and buttons, and more.</p>
+                      </div>
                     </a>
                   </div>
                 </div>
@@ -183,6 +205,8 @@
           <div class="content__left__flex">
             <figure class="content__left__avatar">
               <img src="Images/Avatar.png" alt="avatar">
+              <img src="Images/Avatar3.png" alt="avatar3">
+              <img src="Images/Avatar2.png" alt="avatar2">
             </figure>
             <div class="content__left__tittle">
               <h2 id="contacts">Contacts:</h2>
@@ -200,8 +224,8 @@
                 <h2 id="follow-me">Follow me:</h2>
               </div>
               <ul class="content__left__follow__list list">
-                <li><a target="_blank" href="https://www.instagram.com/">maks_omeleneckii</a></li>
-                <li><a target="_blank" href="https://vk.com/">zmey_maks</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/maks_omeleneckii">maks_omeleneckii</a></li>
+                <li><a target="_blank" href="https://vk.com/zmey_maks">zmey_maks</a></li>
                 <li>+375295239449</li>
                 <li>+375295239449</li>
               </ul>
@@ -231,7 +255,21 @@
               alt="rss-picture"></a>
         </div>
       </footer>
+      <div class="burger-nav">
+        <nav class="burger-nav__header">
+          <ul class="burger-nav__list">
+            <li class="navigation-item"><a href="#contacts">Contacts</a></li>
+            <li class="navigation-item"><a href="#follow-me">Follow me</a></li>
+            <li class="navigation-item"><a href="#languages">Languages</a></li>
+            <li class="navigation-item"><a href="#about-me">About me</a></li>
+            <li class="navigation-item"><a href="#education">Education</a></li>
+            <li class="navigation-item"><a href="#experience">Experience</a></li>
+            <li class="navigation-item"><a href="#skills">Skills</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
