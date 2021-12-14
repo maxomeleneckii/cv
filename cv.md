@@ -1,0 +1,50 @@
+1. **Name and surname:** My name is Max Omeleneckii;
+2. **Contact Information:** My phone number: +375295239449 and my email: [max.omeleneckii@gmail.com](gmail.com);
+3. **About me:** Now I work as an engineer in an electrical company. Before I didn't work in IT, but Now I am learning programming on YouTube and doing a course at RS school. **_I am a fast learner and will definitely achieve my goal._** I want to change my profession and work as IT;
+4. **My skills:** I'm just learning now but I already know the basics of HTML, CSS, GIT and JS;
+5. **Example code:**
+   - **Task codewars:**
+     ```js
+     function arithmetic(a, b, operator) {
+       return {
+         add: a + b,
+         subtract: a - b,
+         multiply: a * b,
+         divide: a / b,
+       }[operator];
+     }
+     ```
+   - **HTML:**
+     ```html
+     <!DOCTYPE html>
+     <html lang="en">
+       <head>
+         <meta charset="UTF-8" />
+         <meta
+           name="viewport"
+           content="width=device-width, initial-scale=1.0"
+         />
+         <title>Example</title>
+         <link rel="stylesheet" href="style.css" />
+       </head>
+       <body>
+         <div>
+           <h1>Information</h1>
+           <p>You need to have with you:</p>
+         </div>
+       </body>
+     </html>
+     ```
+   - **CSS:**
+     ```css
+     div {
+       border: 5px solid rgb(148, 50, 104);
+       margin: 0px auto;
+       max-width: 500px;
+       text-align: center;
+       background-color: red;
+     }
+     ```
+6. **Work experience:** I have no experience in IT, but I have already passed stage0-stage1 and I am still studying at rsschool;
+7. **Education:** higher technical, but not in the IT profession. I am learning programming on YouTube and doing a course at RS school;
+8. **English level:** A2 (I study English with my tutor every week).
