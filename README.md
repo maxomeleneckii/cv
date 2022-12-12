@@ -1,1 +1,1 @@
-https://maxomeleneckii.github.io/cv/cv
+https://maxomeleneckii.github.io/cv
