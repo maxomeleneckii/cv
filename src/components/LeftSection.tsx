@@ -1,4 +1,4 @@
-import { Divider, List, ListItem, ListItemText, Typography } from '@mui/material';
+import { Divider, Link, List, ListItem, ListItemText, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { Section } from './styledComponents/styledComponents';
 
@@ -22,7 +22,7 @@ export const LeftSection = () => {
     <>
       <Section>
         <List>
-          <ListItem>
+          <ListItem sx={{ display: 'flex', flexDirection: 'column' }}>
             <ListItemText
               primary={''}
               secondary={
@@ -50,7 +50,7 @@ export const LeftSection = () => {
             />
             <List sx={{ width: '100%' }}>
               <ListItem sx={{ paddingLeft: '0px', columnGap: '30px', alignItems: 'flex-start' }}>
-                <ListItemText sx={{ flex: '1 0 100px' }}>05.06.2021 - 06.12.2022</ListItemText>
+                <ListItemText sx={{ flex: '0 0 100px' }}>05.06.2021 - 06.12.2022</ListItemText>
                 <ListItemText>
                   <Typography component="h3" sx={{ fontWeight: 'bold' }}>
                     Frontend Developer
@@ -68,12 +68,16 @@ export const LeftSection = () => {
                     </ListItemCustom>
                     <ListItemCustom>
                       Participated in the team development of web applications using TS and React.
+                      Team work example:{' '}
+                      <Link
+                        href="https://kiselmen.github.io/project-management-app/"
+                        target="_blank"
+                      >
+                        Brello.
+                      </Link>
                     </ListItemCustom>
                     <ListItemCustom>
                       Applied class and functional approaches in development.
-                    </ListItemCustom>
-                    <ListItemCustom>
-                      Participated in the development of these projects:
                     </ListItemCustom>
                   </List>
                 </ListItemText>
@@ -93,9 +97,16 @@ export const LeftSection = () => {
               }
             />
             <List sx={{ width: '100%' }}>
-              <ListItem>
-                <ListItemText>20.12.2022</ListItemText>
-                <ListItemText>Content</ListItemText>
+              <ListItem sx={{ paddingLeft: '0px', columnGap: '30px', alignItems: 'flex-start' }}>
+                <ListItemText sx={{ flex: '0 0 100px' }}>01.08.2014 - 25.06.2019</ListItemText>
+                <ListItemText>
+                  <Typography component="h3" sx={{ fontWeight: 'bold' }}>
+                    Civil Engineer (Higher)
+                  </Typography>
+                  <Typography component="h4" sx={{ fontStyle: 'italic' }}>
+                    Brest State Technical University, Brest, Belarus
+                  </Typography>
+                </ListItemText>
               </ListItem>
             </List>
           </ListItem>
