@@ -56,7 +56,7 @@ export const LeftSection = () => {
                     Frontend Developer
                   </Typography>
                   <Typography component="h4" sx={{ fontStyle: 'italic' }}>
-                    RSSchool (student)
+                    The Rolling Scopes School (student)
                   </Typography>
                   <List sx={{ listStyle: 'disc' }}>
                     <ListItemCustom>
@@ -123,9 +123,33 @@ export const LeftSection = () => {
               }
             />
             <List sx={{ width: '100%' }}>
-              <ListItem>
-                <ListItemText>20.12.2022</ListItemText>
-                <ListItemText>Content</ListItemText>
+              <ListItem sx={{ paddingLeft: '0px', columnGap: '30px', alignItems: 'flex-start' }}>
+                <ListItemText sx={{ flex: '0 0 100px' }}>2022</ListItemText>
+                <ListItemText>
+                  <Typography component="h3" sx={{ fontWeight: 'bold' }}>
+                    Java Script
+                  </Typography>
+                  <Typography component="h4" sx={{ fontStyle: 'italic' }}>
+                    The Rolling Scopes School
+                  </Typography>
+                  <List sx={{ listStyle: 'disc' }}>
+                    <ListItemCustom>
+                      <Link target="_blank" href="https://app.rs.school/certificate/8fp0ychm">
+                        Js/Fe Pre-School 2022 (Java Script);
+                      </Link>
+                    </ListItemCustom>
+                    <ListItemCustom>
+                      <Link target="_blank" href="https://app.rs.school/certificate/swetrmxe">
+                        Java Script/Front-end 2022Q1 (Java Script);
+                      </Link>
+                    </ListItemCustom>
+                    <ListItemCustom>
+                      <Link target="_blank" href="https://app.rs.school/certificate/wqeo7rsk">
+                        React 2022 Q3 (Java Script).
+                      </Link>
+                    </ListItemCustom>
+                  </List>
+                </ListItemText>
               </ListItem>
             </List>
           </ListItem>
