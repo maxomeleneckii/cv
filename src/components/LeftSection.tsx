@@ -1,158 +1,77 @@
 import { Divider, Link, List, ListItem, ListItemText, Typography } from '@mui/material';
-import styled from 'styled-components';
-import { Section } from './styledComponents/styledComponents';
-
-export const leftSectionData = {
-  aboutMe:
-    'A dedicated JavaScript developer engaged in programming for about 2 years. I work in conjunction with the React library. I try to use the latest ECMAScript features. I perform the assigned tasks on time. I am striving to get a job in an IT company in order to use my existing experience with JavaScript, as well as gain new experience on large projects.',
-  experience: {
-    date: '',
-    jobTitle: '',
-    description: '',
-  },
-};
-
-const ListItemCustom = styled.li`
-  padding: 0px;
-  margin-left: 15px;
-`;
+import { leftSectionData } from '../data/leftSectionData';
+import { ListItemCustom, Section } from './styledComponents/styledComponents';
 
 export const LeftSection = () => {
   return (
     <>
       <Section>
         <List>
-          <ListItem sx={{ display: 'flex', flexDirection: 'column' }}>
-            <ListItemText
-              primary={''}
-              secondary={
-                <Typography sx={{ textAlign: 'justify' }}>
-                  A dedicated JavaScript developer engaged in programming for about 2 years. I work
-                  in conjunction with the React library. I try to use the latest ECMAScript
-                  features. I perform the assigned tasks on time. I am striving to get a job in an
-                  IT company in order to use my existing experience with JavaScript, as well as gain
-                  new experience on large projects.
-                </Typography>
-              }
-            />
-          </ListItem>
-          <ListItem sx={{ display: 'flex', flexDirection: 'column' }}>
-            <ListItemText
-              sx={{ width: '100%' }}
-              primary={
-                <>
-                  <Typography variant="h6" component="h3">
-                    Experience
-                  </Typography>
-                  <Divider />
-                </>
-              }
-            />
-            <List sx={{ width: '100%' }}>
-              <ListItem sx={{ paddingLeft: '0px', columnGap: '30px', alignItems: 'flex-start' }}>
-                <ListItemText sx={{ flex: '0 0 100px' }}>05.06.2021 - 06.12.2022</ListItemText>
-                <ListItemText>
-                  <Typography component="h3" sx={{ fontWeight: 'bold' }}>
-                    Frontend Developer
-                  </Typography>
-                  <Typography component="h4" sx={{ fontStyle: 'italic' }}>
-                    The Rolling Scopes School (student)
-                  </Typography>
-                  <List sx={{ listStyle: 'disc' }}>
-                    <ListItemCustom>
-                      Implemented websites and browser games using HTML, CSS (SCSS), JS, TS.
-                    </ListItemCustom>
-                    <ListItemCustom>
-                      Used the React library in development in conjunction with MUI, styled
-                      components, modular styles, Redux and much more.
-                    </ListItemCustom>
-                    <ListItemCustom>
-                      Participated in the team development of web applications using TS and React.
-                      Team work example:{' '}
-                      <Link
-                        href="https://kiselmen.github.io/project-management-app/"
-                        target="_blank"
-                      >
-                        Brello.
-                      </Link>
-                    </ListItemCustom>
-                    <ListItemCustom>
-                      Applied class and functional approaches in development.
-                    </ListItemCustom>
+          {leftSectionData.map((section) => {
+            return (
+              <ListItem key={section.title} sx={{ display: 'flex', flexDirection: 'column' }}>
+                <ListItemText
+                  sx={{ width: '100%' }}
+                  primary={
+                    section.title !== 'About' && (
+                      <>
+                        <Typography variant="h6" component="h3">
+                          {section.title}
+                        </Typography>
+                        <Divider />
+                      </>
+                    )
+                  }
+                  secondary={
+                    section.title === 'About' && (
+                      <Typography sx={{ textAlign: 'justify' }}>
+                        {section.description[0].text}
+                      </Typography>
+                    )
+                  }
+                />
+                {section.title !== 'About' && (
+                  <List sx={{ width: '100%' }}>
+                    <ListItem
+                      sx={{ paddingLeft: '0px', columnGap: '30px', alignItems: 'flex-start' }}
+                    >
+                      <ListItemText sx={{ flex: '0 0 100px' }}>{section.date}</ListItemText>
+                      <ListItemText>
+                        <Typography component="h3" sx={{ fontWeight: 'bold' }}>
+                          {section.position}
+                        </Typography>
+                        <Typography component="h4" sx={{ fontStyle: 'italic' }}>
+                          {section.company}
+                        </Typography>
+                        <List sx={{ listStyle: 'disc' }}>
+                          {section.description.map((item) => {
+                            return (
+                              <ListItemCustom key={item.text}>
+                                {item.textLink ? (
+                                  <>
+                                    {item.text}
+                                    <Link href={item.url} target="_blank">
+                                      {item.textLink}
+                                    </Link>
+                                  </>
+                                ) : section.title === 'Certificates' ? (
+                                  <Link href={item.url} target="_blank">
+                                    {item.text}
+                                  </Link>
+                                ) : (
+                                  item.text
+                                )}
+                              </ListItemCustom>
+                            );
+                          })}
+                        </List>
+                      </ListItemText>
+                    </ListItem>
                   </List>
-                </ListItemText>
+                )}
               </ListItem>
-            </List>
-          </ListItem>
-          <ListItem sx={{ display: 'flex', flexDirection: 'column' }}>
-            <ListItemText
-              sx={{ width: '100%' }}
-              primary={
-                <>
-                  <Typography variant="h6" component="h3">
-                    Education
-                  </Typography>
-                  <Divider />
-                </>
-              }
-            />
-            <List sx={{ width: '100%' }}>
-              <ListItem sx={{ paddingLeft: '0px', columnGap: '30px', alignItems: 'flex-start' }}>
-                <ListItemText sx={{ flex: '0 0 100px' }}>01.08.2014 - 25.06.2019</ListItemText>
-                <ListItemText>
-                  <Typography component="h3" sx={{ fontWeight: 'bold' }}>
-                    Civil Engineer (Higher)
-                  </Typography>
-                  <Typography component="h4" sx={{ fontStyle: 'italic' }}>
-                    Brest State Technical University, Brest, Belarus
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-            </List>
-          </ListItem>
-          <ListItem sx={{ display: 'flex', flexDirection: 'column' }}>
-            <ListItemText
-              sx={{ width: '100%' }}
-              primary={
-                <>
-                  <Typography variant="h6" component="h3">
-                    Certificates
-                  </Typography>
-                  <Divider />
-                </>
-              }
-            />
-            <List sx={{ width: '100%' }}>
-              <ListItem sx={{ paddingLeft: '0px', columnGap: '30px', alignItems: 'flex-start' }}>
-                <ListItemText sx={{ flex: '0 0 100px' }}>2022</ListItemText>
-                <ListItemText>
-                  <Typography component="h3" sx={{ fontWeight: 'bold' }}>
-                    Java Script
-                  </Typography>
-                  <Typography component="h4" sx={{ fontStyle: 'italic' }}>
-                    The Rolling Scopes School
-                  </Typography>
-                  <List sx={{ listStyle: 'disc' }}>
-                    <ListItemCustom>
-                      <Link target="_blank" href="https://app.rs.school/certificate/8fp0ychm">
-                        Js/Fe Pre-School 2022 (Java Script);
-                      </Link>
-                    </ListItemCustom>
-                    <ListItemCustom>
-                      <Link target="_blank" href="https://app.rs.school/certificate/swetrmxe">
-                        Java Script/Front-end 2022Q1 (Java Script);
-                      </Link>
-                    </ListItemCustom>
-                    <ListItemCustom>
-                      <Link target="_blank" href="https://app.rs.school/certificate/wqeo7rsk">
-                        React 2022 Q3 (Java Script).
-                      </Link>
-                    </ListItemCustom>
-                  </List>
-                </ListItemText>
-              </ListItem>
-            </List>
-          </ListItem>
+            );
+          })}
         </List>
       </Section>
     </>

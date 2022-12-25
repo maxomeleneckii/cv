@@ -9,3 +9,8 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
 `;
+
+export const ListItemCustom = styled.li`
+  padding: 0px;
+  margin-left: 15px;
+`;
