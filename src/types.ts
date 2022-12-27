@@ -5,3 +5,15 @@ export interface LeftSectionDataType {
   company: string;
   description: { text: string; textLink?: string; url?: string }[];
 }
+
+export interface RightSectionDataType {
+  title: string;
+  adress?: string;
+  telegram?: string;
+  email?: string;
+  skype?: string;
+  github?: string;
+  discord?: string;
+  skills?: string[];
+  languages?: string[];
+}
