@@ -3,19 +3,30 @@ import { RightSectionDataType } from '../types';
 export const rightSectionData: RightSectionDataType[] = [
   {
     title: 'Personal info',
-    adress: 'Brest, Republic of Belarus',
-    telegram: '@max_omel',
-    email: 'max.omeleneckii@gmail.com',
-    skype: 'live:.cid.161c762aafc5cf35',
-    github: 'https://github.com/maxomeleneckii',
-    discord: 'Макс(maxomeleneckii)#2645',
+    description: [
+      { subtitle: 'Adress', text: 'Brest, Republic of Belarus' },
+      { subtitle: 'Telegram', text: '@max_omel' },
+      { subtitle: 'E-mail', text: 'max.omeleneckii@gmail.com' },
+      { subtitle: 'Skype', text: 'live:.cid.161c762aafc5cf35' },
+      { subtitle: 'Github', text: 'github.com/maxomeleneckii' },
+      { subtitle: 'Discord', text: 'Макс(maxomeleneckii)#2645' },
+    ],
   },
   {
     title: 'Skills',
-    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Redux'],
+    description: [
+      { text: 'HTML', rating: 4.5 },
+      { text: 'CSS', rating: 4 },
+      { text: 'JavaScript', rating: 3.5 },
+      { text: 'TypeScript', rating: 3.5 },
+      { text: 'React', rating: 3.5 },
+    ],
   },
   {
     title: 'Languages',
-    languages: ['Russian (native)', 'English (B1)'],
+    description: [
+      { text: 'Russian', rating: 5, ratingText: 'Native' },
+      { text: 'English', rating: 3, ratingText: 'B1' },
+    ],
   },
 ];

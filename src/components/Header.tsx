@@ -12,7 +12,7 @@ export const Header = () => {
             <Typography variant="h5" component="h1">
               Max Omeleneckii
             </Typography>
-            <Typography variant="h6" component="h2" sx={{ fontSize: '12px' }}>
+            <Typography variant="h6" component="h2" sx={{ fontSize: '16px' }}>
               Frontend Developer
             </Typography>
           </Box>

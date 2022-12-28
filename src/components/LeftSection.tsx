@@ -15,7 +15,7 @@ export const LeftSection = () => {
                   primary={
                     section.title !== 'About' && (
                       <>
-                        <Typography variant="h6" component="h3">
+                        <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
                           {section.title}
                         </Typography>
                         <Divider />

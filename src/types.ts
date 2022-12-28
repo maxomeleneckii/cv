@@ -8,12 +8,12 @@ export interface LeftSectionDataType {
 
 export interface RightSectionDataType {
   title: string;
-  adress?: string;
-  telegram?: string;
-  email?: string;
-  skype?: string;
-  github?: string;
-  discord?: string;
+  description?: {
+    subtitle?: string;
+    text?: string;
+    rating?: number;
+    ratingText?: string;
+  }[];
   skills?: string[];
   languages?: string[];
 }
