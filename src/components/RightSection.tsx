@@ -1,11 +1,24 @@
-import { List, ListItem, ListItemText, Typography, Divider, Rating, Stack } from '@mui/material';
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  Divider,
+  Rating,
+  Stack,
+  Box,
+  useMediaQuery,
+} from '@mui/material';
 import { rightSectionData } from '../data/rightSectionData';
 import { Section } from './styledComponents/styledComponents';
 
 export const RightSection = () => {
+  const matches = useMediaQuery('(max-width:767px)');
   return (
     <>
-      <Section style={{ flex: '0 0 200px' }}>
+      <Section
+        style={{ flex: `${matches ? '0 0 100%' : '0 0 320px'}`, backgroundColor: '#f4f4f4' }}
+      >
         <List>
           {rightSectionData.map((section) => {
             return (
@@ -17,7 +30,11 @@ export const RightSection = () => {
                   sx={{ width: '100%' }}
                   primary={
                     <>
-                      <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
+                      <Typography
+                        variant="h5"
+                        component="h3"
+                        sx={{ fontWeight: 'bold', color: '#003d73' }}
+                      >
                         {section.title}
                       </Typography>
                       <Divider />
@@ -37,25 +54,25 @@ export const RightSection = () => {
                           )
                         }
                         secondary={
-                          <>
+                          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                             <Typography component="h5" sx={{ color: 'rgba(0, 0, 0, 0.87)' }}>
                               {item.text}
                             </Typography>
-                            {section.title !== 'Personal info' && (
+                            {section.title === 'Skills' ? (
                               <Stack spacing={1} sx={{ alignItems: 'flex-end' }}>
-                                <Typography component="legend" sx={{ fontSize: '14px' }}>
-                                  {item.ratingText}
-                                </Typography>
                                 <Rating
+                                  size="small"
                                   name="half-rating-read"
                                   defaultValue={item.rating}
                                   precision={0.5}
                                   readOnly
-                                  sx={{ color: '#1976d2' }}
+                                  sx={{ color: '#003d73' }}
                                 />
                               </Stack>
+                            ) : (
+                              <Typography>{item.ratingText}</Typography>
                             )}
-                          </>
+                          </Box>
                         }
                       />
                     </ListItem>

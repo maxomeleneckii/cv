@@ -1,8 +1,17 @@
-import { Divider, Link, List, ListItem, ListItemText, Typography } from '@mui/material';
+import {
+  Divider,
+  Link,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { leftSectionData } from '../data/leftSectionData';
 import { ListItemCustom, Section } from './styledComponents/styledComponents';
 
 export const LeftSection = () => {
+  const matches = useMediaQuery('(max-width:767px)');
   return (
     <>
       <Section>
@@ -15,7 +24,11 @@ export const LeftSection = () => {
                   primary={
                     section.title !== 'About' && (
                       <>
-                        <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
+                        <Typography
+                          variant="h5"
+                          component="h3"
+                          sx={{ fontWeight: 'bold', color: '#003d73' }}
+                        >
                           {section.title}
                         </Typography>
                         <Divider />
@@ -33,9 +46,21 @@ export const LeftSection = () => {
                 {section.title !== 'About' && (
                   <List sx={{ width: '100%' }}>
                     <ListItem
-                      sx={{ paddingLeft: '0px', columnGap: '30px', alignItems: 'flex-start' }}
+                      sx={{
+                        paddingLeft: '0px',
+                        columnGap: '30px',
+                        alignItems: 'flex-start',
+                        flexDirection: `${matches ? 'column' : 'row'}`,
+                      }}
                     >
-                      <ListItemText sx={{ flex: '0 0 100px' }}>{section.date}</ListItemText>
+                      <ListItemText
+                        sx={{
+                          flex: `${matches ? '0 0 auto' : '0 0 100px'}`,
+                          textDecoration: `${matches ? 'underline' : 'none'}`,
+                        }}
+                      >
+                        {section.date}
+                      </ListItemText>
                       <ListItemText>
                         <Typography component="h3" sx={{ fontWeight: 'bold' }}>
                           {section.position}

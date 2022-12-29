@@ -16,8 +16,8 @@ export const rightSectionData: RightSectionDataType[] = [
     title: 'Skills',
     description: [
       { text: 'HTML', rating: 4.5 },
-      { text: 'CSS', rating: 4 },
-      { text: 'JavaScript', rating: 3.5 },
+      { text: 'CSS (SCSS)', rating: 4 },
+      { text: 'JavaScript (ES6+)', rating: 3.5 },
       { text: 'TypeScript', rating: 3.5 },
       { text: 'React', rating: 3.5 },
     ],
@@ -25,8 +25,8 @@ export const rightSectionData: RightSectionDataType[] = [
   {
     title: 'Languages',
     description: [
-      { text: 'Russian', rating: 5, ratingText: 'Native' },
-      { text: 'English', rating: 3, ratingText: 'B1' },
+      { text: 'Russian', ratingText: 'Native' },
+      { text: 'English', ratingText: 'B1' },
     ],
   },
 ];
