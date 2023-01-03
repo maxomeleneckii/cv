@@ -9,18 +9,22 @@ import {
   Box,
   useMediaQuery,
 } from '@mui/material';
-import { rightSectionData } from '../data/rightSectionData';
-import { Section } from './styledComponents/styledComponents';
+import { useTranslation } from 'react-i18next';
+import { Section } from '../styledComponents/styledComponents';
+import { RightSectionDataType } from '../types';
 
 export const RightSection = () => {
   const matches = useMediaQuery('(max-width:767px)');
+  const { t } = useTranslation();
+  const dataRight = t('data-right', { returnObjects: true }) as RightSectionDataType[];
+
   return (
     <>
       <Section
         style={{ flex: `${matches ? '0 0 100%' : '0 0 320px'}`, backgroundColor: '#f4f4f4' }}
       >
         <List>
-          {rightSectionData.map((section) => {
+          {dataRight.map((section) => {
             return (
               <ListItem
                 key={section.title}
@@ -47,7 +51,8 @@ export const RightSection = () => {
                       <ListItemText
                         disableTypography={true}
                         primary={
-                          section.title === 'Personal info' && (
+                          (section.title === 'Personal info' ||
+                            section.title === 'Личная информация') && (
                             <Typography component="h4" sx={{ fontWeight: 'bold' }}>
                               {item.subtitle}
                             </Typography>
@@ -58,7 +63,7 @@ export const RightSection = () => {
                             <Typography component="h5" sx={{ color: 'rgba(0, 0, 0, 0.87)' }}>
                               {item.text}
                             </Typography>
-                            {section.title === 'Skills' ? (
+                            {section.title === 'Skills' || section.title === 'Навыки' ? (
                               <Stack spacing={1} sx={{ alignItems: 'flex-end' }}>
                                 <Rating
                                   size="small"

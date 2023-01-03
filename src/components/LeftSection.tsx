@@ -7,16 +7,20 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material';
-import { leftSectionData } from '../data/leftSectionData';
-import { ListItemCustom, Section } from './styledComponents/styledComponents';
+import { useTranslation } from 'react-i18next';
+import { ListItemCustom, Section } from '../styledComponents/styledComponents';
+import { LeftSectionDataType } from '../types';
 
 export const LeftSection = () => {
   const matches = useMediaQuery('(max-width:767px)');
+  const { t } = useTranslation();
+  const dataLeft = t('data-left', { returnObjects: true }) as LeftSectionDataType[];
+
   return (
     <>
       <Section>
         <List>
-          {leftSectionData.map((section) => {
+          {dataLeft.map((section) => {
             return (
               <ListItem key={section.title} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <ListItemText
@@ -79,7 +83,8 @@ export const LeftSection = () => {
                                       {item.textLink}
                                     </Link>
                                   </>
-                                ) : section.title === 'Certificates' ? (
+                                ) : section.title === 'Certificates' ||
+                                  section.title === 'Сертификаты' ? (
                                   <Link href={item.url} target="_blank">
                                     {item.text}
                                   </Link>

@@ -1,0 +1,96 @@
+{
+  "name": "Макс Омеленецкий",
+  "job-position": "Фронтенд разработчик",
+  "language-en": "АНГ",
+  "language-ru": "РУС",
+  "data-left": [
+    {
+      "title": "About",
+      "date": "",
+      "position": "",
+      "company": "",
+      "description": [
+        {
+          "text": "Целеустремлённый JavaScript разработчик занимающийся программированием уже около 2-х лет. Работаю в связке с библиотекой React. Стараюсь применять последние фичи EcmaScript. Поставленные задачи выполняю в установленные сроки. Стремлюсь получить работу в IT компании чтобы использовать имеющийся опыт с JavaScript, а также получать новый опыт на больших проектах."
+        }
+      ]
+    },
+    {
+      "title": "Опыт",
+      "date": "05.06.2021 - 06.12.2022",
+      "position": "Фронтенд разработчик",
+      "company": "The Rolling Scopes School (студент)",
+      "description": [
+        {
+          "text": "Реализовывал веб-сайты и браузерные игры с использованием HTML, CSS (SCSS), JS, TS."
+        },
+        {
+          "text": "Использовал библиотеку React в разработке совместно с MUI, компонентными стилями, модульными стилями, Redux и многим другим."
+        },
+        {
+          "url": "https://kiselmen.github.io/project-management-app/",
+          "text": "Участвовал в командной разработке веб-приложений с использованием TS и React. Пример работы в команде: ",
+          "textLink": "Brello."
+        },
+        { "text": "Применял классовый и функциональный подходы в разработке" }
+      ]
+    },
+    {
+      "title": "Образование",
+      "date": "01.08.2014 - 25.06.2019",
+      "position": "Инженер-строитель (Высшее)",
+      "company": "Брестский государственный технический университет, г.Брест, Республика Беларусь",
+      "description": []
+    },
+    {
+      "title": "Сертификаты",
+      "date": "2022",
+      "position": "Java Script",
+      "company": "The Rolling Scopes School",
+      "description": [
+        {
+          "url": "https://app.rs.school/certificate/8fp0ychm",
+          "text": "Js/Fe Pre-School 2022 (Java Script);"
+        },
+        {
+          "url": "https://app.rs.school/certificate/swetrmxe",
+          "text": "Java Script/Front-end 2022Q1 (Java Script);"
+        },
+        {
+          "url": "https://app.rs.school/certificate/wqeo7rsk",
+          "text": "React 2022 Q3 (Java Script)."
+        }
+      ]
+    }
+  ],
+  "data-right": [
+    {
+      "title": "Личная информация",
+      "description": [
+        { "subtitle": "Адрес", "text": "г.Брест, Республика Беларусь" },
+        { "subtitle": "Телеграмм", "text": "@max_omel" },
+        { "subtitle": "Почта", "text": "max.omeleneckii@gmail.com" },
+        { "subtitle": "Скайп", "text": "live:.cid.161c762aafc5cf35" },
+        { "subtitle": "Гитхаб", "text": "github.com/maxomeleneckii" },
+        { "subtitle": "Дискорд", "text": "Макс(maxomeleneckii)#2645" }
+      ]
+    },
+    {
+      "title": "Навыки",
+      "description": [
+        { "text": "HTML", "rating": 4.5 },
+        { "text": "CSS (SCSS)", "rating": 4 },
+        { "text": "JavaScript (ES6+)", "rating": 3.5 },
+        { "text": "TypeScript", "rating": 3.5 },
+        { "text": "React", "rating": 3.5 }
+      ]
+    },
+    {
+      "title": "Языки",
+      "description": [
+        { "text": "Русский", "ratingText": "Родной" },
+        { "text": "Английский", "ratingText": "B1" }
+      ]
+    }
+  ]
+}
