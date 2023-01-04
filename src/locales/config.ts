@@ -8,7 +8,7 @@ i18next
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: ['en-US', 'ru-RU'],
     resources: {
       en: { translation: engTranslate },
       ru: { translation: rusTranslate },

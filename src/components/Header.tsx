@@ -9,7 +9,7 @@ export const Header = () => {
   const [langCurrent, setLangCurrent] = useState(localStorage.getItem('i18nextLng'));
 
   const changeLanguage = () => {
-    const localLang = langCurrent === 'en' ? 'ru' : 'en';
+    const localLang = langCurrent === 'en-US' ? 'ru-RU' : 'en-US';
     i18n.changeLanguage(localLang);
     localStorage.setItem('i18nextLng', localLang);
     setLangCurrent(localLang);
@@ -38,7 +38,11 @@ export const Header = () => {
           </Box>
           <Stack direction="row" spacing={1} alignItems="center">
             <Typography>{t('language-en')}</Typography>
-            <Switch onChange={changeLanguage} inputProps={{ 'aria-label': 'controlled' }} />
+            <Switch
+              checked={langCurrent === 'ru-RU' ? true : false}
+              onChange={changeLanguage}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
             <Typography>{t('language-ru')}</Typography>
           </Stack>
           <Box>
