@@ -6,7 +6,7 @@ import stylesApp from './App.module.css';
 function App() {
   return (
     <>
-      <Paper className={stylesApp.app_wrapper}>
+      <Paper className={stylesApp.appWrapper}>
         <Header />
         <Main />
       </Paper>
