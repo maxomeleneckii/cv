@@ -1,18 +1,10 @@
-import {
-  Divider,
-  Link,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-  useMediaQuery,
-} from '@mui/material';
+import { Divider, Link, List, ListItem, ListItemText, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { ListItemCustom, Section } from '../styledComponents/styledComponents';
 import { LeftSectionDataType } from '../types';
+import stylesLeftSection from './LeftSection.module.css';
 
 export const LeftSection = () => {
-  const matches = useMediaQuery('(max-width:767px)');
   const { t } = useTranslation();
   const dataLeft = t('data-left', { returnObjects: true }) as LeftSectionDataType[];
 
@@ -21,17 +13,21 @@ export const LeftSection = () => {
       <Section>
         <List>
           {dataLeft.map((section) => {
+            const currentTitleAbout = section.title === 'About';
+            const currentTitleCertif =
+              section.title === 'Certificates' || section.title === 'Сертификаты';
+
             return (
-              <ListItem key={section.title} sx={{ display: 'flex', flexDirection: 'column' }}>
+              <ListItem key={section.title} className={stylesLeftSection.listItem}>
                 <ListItemText
-                  sx={{ width: '100%' }}
+                  className={stylesLeftSection.listItemText}
                   primary={
-                    section.title !== 'About' && (
+                    !currentTitleAbout && (
                       <>
                         <Typography
                           variant="h5"
                           component="h3"
-                          sx={{ fontWeight: 'bold', color: '#003d73' }}
+                          className={stylesLeftSection.listItemTitle}
                         >
                           {section.title}
                         </Typography>
@@ -40,36 +36,27 @@ export const LeftSection = () => {
                     )
                   }
                   secondary={
-                    section.title === 'About' && (
-                      <Typography sx={{ textAlign: 'justify' }}>
+                    currentTitleAbout && (
+                      <Typography className={stylesLeftSection.listItemContent}>
                         {section.description[0].text}
                       </Typography>
                     )
                   }
                 />
-                {section.title !== 'About' && (
-                  <List sx={{ width: '100%' }}>
-                    <ListItem
-                      sx={{
-                        paddingLeft: '0px',
-                        columnGap: '30px',
-                        alignItems: 'flex-start',
-                        flexDirection: `${matches ? 'column' : 'row'}`,
-                      }}
-                    >
-                      <ListItemText
-                        sx={{
-                          flex: `${matches ? '0 0 auto' : '0 0 100px'}`,
-                          textDecoration: `${matches ? 'underline' : 'none'}`,
-                        }}
-                      >
+                {!currentTitleAbout && (
+                  <List className={stylesLeftSection.listItemText}>
+                    <ListItem className={stylesLeftSection.listItemNotAbout}>
+                      <ListItemText className={stylesLeftSection.listItemTextNotAbout}>
                         {section.date}
                       </ListItemText>
                       <ListItemText>
-                        <Typography component="h3" sx={{ fontWeight: 'bold' }}>
+                        <Typography component="h3" className={stylesLeftSection.listItemTextJob}>
                           {section.position}
                         </Typography>
-                        <Typography component="h4" sx={{ fontStyle: 'italic' }}>
+                        <Typography
+                          component="h4"
+                          className={stylesLeftSection.listItemTextCompany}
+                        >
                           {section.company}
                         </Typography>
                         <List sx={{ listStyle: 'disc' }}>
@@ -83,8 +70,7 @@ export const LeftSection = () => {
                                       {item.textLink}
                                     </Link>
                                   </>
-                                ) : section.title === 'Certificates' ||
-                                  section.title === 'Сертификаты' ? (
+                                ) : currentTitleCertif ? (
                                   <Link href={item.url} target="_blank">
                                     {item.text}
                                   </Link>

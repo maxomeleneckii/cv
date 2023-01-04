@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { AppBar, Avatar, Box, IconButton, Stack, Switch, Toolbar, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import myPhoto from '../assets/my-photo.jpg';
+import avatarPhoto from '../assets/my-photo.jpg';
+import stylesHeader from './Header.module.css';
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
-
-  const [langCurrent, setLangCurrent] = useState(localStorage.getItem('i18nextLng'));
+  const defoultValueState = localStorage.getItem('i18nextLng') || '';
+  const [langCurrent, setLangCurrent] = useState(defoultValueState);
 
   const changeLanguage = () => {
     const localLang = langCurrent === 'en-US' ? 'ru-RU' : 'en-US';
@@ -17,24 +18,13 @@ export const Header = () => {
 
   return (
     <>
-      <AppBar
-        sx={{
-          position: 'relative',
-          borderTopLeftRadius: '4px',
-          borderTopRightRadius: '4px',
-          backgroundColor: '#003d73',
-          boxShadow:
-            '0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)',
-        }}
-      >
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
+      <AppBar className={stylesHeader.headerWrapper}>
+        <Toolbar className={stylesHeader.headerToolbar}>
           <Box>
             <Typography variant="h5" component="h1">
               {t('name')}
             </Typography>
-            <Typography variant="h6" component="h2" sx={{ fontSize: '16px' }}>
-              {t('job-position')}
-            </Typography>
+            <Typography component="h2">{t('job-position')}</Typography>
           </Box>
           <Stack direction="row" spacing={1} alignItems="center">
             <Typography>{t('language-en')}</Typography>
@@ -47,7 +37,7 @@ export const Header = () => {
           </Stack>
           <Box>
             <IconButton>
-              <Avatar alt="my-picture" src={myPhoto} sx={{ width: '80px', height: '80px' }} />
+              <Avatar alt="my-picture" src={avatarPhoto} className={stylesHeader.headerAvatar} />
             </IconButton>
           </Box>
         </Toolbar>

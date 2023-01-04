@@ -1,11 +1,12 @@
 import { Paper } from '@mui/material';
 import { Header } from './Header';
 import { Main } from './Main';
+import stylesApp from './App.module.css';
 
 function App() {
   return (
     <>
-      <Paper sx={{ margin: '0 auto', maxWidth: '56rem', width: '100%', height: '100%' }}>
+      <Paper className={stylesApp.app_wrapper}>
         <Header />
         <Main />
       </Paper>

@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const MainWrapper = styled.main`
   display: flex;
   padding: 0;
+  flex-wrap: nowrap;
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Section = styled.section`

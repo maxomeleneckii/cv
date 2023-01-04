@@ -7,37 +7,35 @@ import {
   Rating,
   Stack,
   Box,
-  useMediaQuery,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Section } from '../styledComponents/styledComponents';
+import stylesRightSection from './RightSection.module.css';
 import { RightSectionDataType } from '../types';
 
 export const RightSection = () => {
-  const matches = useMediaQuery('(max-width:767px)');
   const { t } = useTranslation();
   const dataRight = t('data-right', { returnObjects: true }) as RightSectionDataType[];
 
   return (
     <>
-      <Section
-        style={{ flex: `${matches ? '0 0 100%' : '0 0 320px'}`, backgroundColor: '#f4f4f4' }}
-      >
+      <Section className={stylesRightSection.leftSectionWrapper}>
         <List>
           {dataRight.map((section) => {
+            const currentTitlePersonalInf =
+              section.title === 'Personal info' || section.title === 'Личная информация';
+            const currentTitleSkills = section.title === 'Skills' || section.title === 'Навыки';
+
             return (
-              <ListItem
-                key={section.title}
-                sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}
-              >
+              <ListItem key={section.title} className={stylesRightSection.listItem}>
                 <ListItemText
-                  sx={{ width: '100%' }}
+                  className={stylesRightSection.listItemText}
                   primary={
                     <>
                       <Typography
                         variant="h5"
                         component="h3"
-                        sx={{ fontWeight: 'bold', color: '#003d73' }}
+                        className={stylesRightSection.listItemTitle}
                       >
                         {section.title}
                       </Typography>
@@ -45,14 +43,13 @@ export const RightSection = () => {
                     </>
                   }
                 />
-                <List sx={{ width: '100%' }}>
+                <List className={stylesRightSection.listItemText}>
                   {section.description!.map((item) => (
                     <ListItem key={item.text} sx={{ padding: '0' }}>
                       <ListItemText
                         disableTypography={true}
                         primary={
-                          (section.title === 'Personal info' ||
-                            section.title === 'Личная информация') && (
+                          currentTitlePersonalInf && (
                             <Typography component="h4" sx={{ fontWeight: 'bold' }}>
                               {item.subtitle}
                             </Typography>
@@ -63,7 +60,7 @@ export const RightSection = () => {
                             <Typography component="h5" sx={{ color: 'rgba(0, 0, 0, 0.87)' }}>
                               {item.text}
                             </Typography>
-                            {section.title === 'Skills' || section.title === 'Навыки' ? (
+                            {currentTitleSkills ? (
                               <Stack spacing={1} sx={{ alignItems: 'flex-end' }}>
                                 <Rating
                                   size="small"

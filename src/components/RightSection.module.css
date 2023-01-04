@@ -1,0 +1,25 @@
+.leftSectionWrapper {
+  flex: 0 0 320px;
+  background-color: #f4f4f4;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.listItemText {
+  width: 100%;
+}
+
+.listItemTitle {
+  font-weight: bold;
+  color: #003d73;
+}
+
+@media (max-width: 767px) {
+  .leftSectionWrapper {
+    flex: 0 0 100%;
+  }
+}
