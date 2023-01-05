@@ -1,8 +1,8 @@
 import { Divider, Link, List, ListItem, ListItemText, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { ListItemCustom, Section } from '../styledComponents/styledComponents';
+import { ListItemCustom, SectionLeft } from '../styledComponents/styledComponents';
 import { LeftSectionDataType } from '../types';
-import stylesLeftSection from './LeftSection.module.css';
+import { styles } from './LeftSection.styles';
 
 export const LeftSection = () => {
   const { t } = useTranslation();
@@ -10,7 +10,7 @@ export const LeftSection = () => {
 
   return (
     <>
-      <Section>
+      <SectionLeft>
         <List>
           {dataLeft.map((section) => {
             const currentTitleAbout = section.title === 'About';
@@ -18,17 +18,13 @@ export const LeftSection = () => {
               section.title === 'Certificates' || section.title === 'Сертификаты';
 
             return (
-              <ListItem key={section.title} className={stylesLeftSection.listItem}>
+              <ListItem key={section.title} sx={styles.listItem}>
                 <ListItemText
-                  className={stylesLeftSection.listItemText}
+                  sx={styles.listItemText}
                   primary={
                     !currentTitleAbout && (
                       <>
-                        <Typography
-                          variant="h5"
-                          component="h3"
-                          className={stylesLeftSection.listItemTitle}
-                        >
+                        <Typography variant="h5" component="h3" sx={styles.listItemTitle}>
                           {section.title}
                         </Typography>
                         <Divider />
@@ -37,26 +33,21 @@ export const LeftSection = () => {
                   }
                   secondary={
                     currentTitleAbout && (
-                      <Typography className={stylesLeftSection.listItemContent}>
+                      <Typography sx={styles.listItemContent}>
                         {section.description[0].text}
                       </Typography>
                     )
                   }
                 />
                 {!currentTitleAbout && (
-                  <List className={stylesLeftSection.listItemText}>
-                    <ListItem className={stylesLeftSection.listItemNotAbout}>
-                      <ListItemText className={stylesLeftSection.listItemTextNotAbout}>
-                        {section.date}
-                      </ListItemText>
+                  <List sx={styles.listItemText}>
+                    <ListItem sx={styles.listItemNotAbout}>
+                      <ListItemText sx={styles.listItemTextNotAbout}>{section.date}</ListItemText>
                       <ListItemText>
-                        <Typography component="h3" className={stylesLeftSection.listItemTextJob}>
+                        <Typography component="h3" sx={styles.listItemTextJob}>
                           {section.position}
                         </Typography>
-                        <Typography
-                          component="h4"
-                          className={stylesLeftSection.listItemTextCompany}
-                        >
+                        <Typography component="h4" sx={styles.listItemTextCompany}>
                           {section.company}
                         </Typography>
                         <List sx={{ listStyle: 'disc' }}>
@@ -89,7 +80,7 @@ export const LeftSection = () => {
             );
           })}
         </List>
-      </Section>
+      </SectionLeft>
     </>
   );
 };

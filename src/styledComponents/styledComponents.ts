@@ -9,9 +9,19 @@ export const MainWrapper = styled.main`
   }
 `;
 
-export const Section = styled.section`
+export const SectionLeft = styled.section`
   display: flex;
   flex-direction: column;
+`;
+
+export const SectionRight = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 320px;
+  background-color: #f4f4f4;
+  @media (max-width: 767px) {
+    flex: 0 0 100%;
+  }
 `;
 
 export const ListItemCustom = styled.li`

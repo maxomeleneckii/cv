@@ -1,12 +1,12 @@
 import { Paper } from '@mui/material';
 import { Header } from './Header';
 import { Main } from './Main';
-import stylesApp from './App.module.css';
+import { styles } from './App.styles';
 
 function App() {
   return (
     <>
-      <Paper className={stylesApp.appWrapper}>
+      <Paper sx={styles.appWrapper}>
         <Header />
         <Main />
       </Paper>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Avatar, Box, IconButton, Stack, Switch, Toolbar, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import avatarPhoto from '../assets/my-photo.jpg';
-import stylesHeader from './Header.module.css';
+import { styles } from './Header.styles';
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
@@ -18,9 +18,9 @@ export const Header = () => {
 
   return (
     <>
-      <AppBar className={stylesHeader.headerWrapper}>
-        <Toolbar className={stylesHeader.headerToolbar}>
-          <Box>
+      <AppBar sx={styles.headerWrapper}>
+        <Toolbar sx={styles.headerToolbar}>
+          <Box sx={styles.headerName}>
             <Typography variant="h5" component="h1">
               {t('name')}
             </Typography>
@@ -37,7 +37,7 @@ export const Header = () => {
           </Stack>
           <Box>
             <IconButton>
-              <Avatar alt="my-picture" src={avatarPhoto} className={stylesHeader.headerAvatar} />
+              <Avatar alt="my-picture" src={avatarPhoto} sx={styles.headerAvatar} />
             </IconButton>
           </Box>
         </Toolbar>

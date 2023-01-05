@@ -9,8 +9,8 @@ import {
   Box,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { Section } from '../styledComponents/styledComponents';
-import stylesRightSection from './RightSection.module.css';
+import { SectionRight } from '../styledComponents/styledComponents';
+import { styles } from './RightSection.styles';
 import { RightSectionDataType } from '../types';
 
 export const RightSection = () => {
@@ -19,7 +19,7 @@ export const RightSection = () => {
 
   return (
     <>
-      <Section className={stylesRightSection.leftSectionWrapper}>
+      <SectionRight>
         <List>
           {dataRight.map((section) => {
             const currentTitlePersonalInf =
@@ -27,23 +27,19 @@ export const RightSection = () => {
             const currentTitleSkills = section.title === 'Skills' || section.title === 'Навыки';
 
             return (
-              <ListItem key={section.title} className={stylesRightSection.listItem}>
+              <ListItem key={section.title} sx={styles.listItem}>
                 <ListItemText
-                  className={stylesRightSection.listItemText}
+                  sx={styles.listItemText}
                   primary={
                     <>
-                      <Typography
-                        variant="h5"
-                        component="h3"
-                        className={stylesRightSection.listItemTitle}
-                      >
+                      <Typography variant="h5" component="h3" sx={styles.listItemTitle}>
                         {section.title}
                       </Typography>
                       <Divider />
                     </>
                   }
                 />
-                <List className={stylesRightSection.listItemText}>
+                <List sx={styles.listItemText}>
                   {section.description!.map((item) => (
                     <ListItem key={item.text} sx={{ padding: '0' }}>
                       <ListItemText
@@ -84,7 +80,7 @@ export const RightSection = () => {
             );
           })}
         </List>
-      </Section>
+      </SectionRight>
     </>
   );
 };
